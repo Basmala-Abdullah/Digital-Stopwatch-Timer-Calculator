@@ -1,0 +1,120 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\buzzer.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\buzzer.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Calculator.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Calculator.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\DIO.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\DIO.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Keypad.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Keypad.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\LCD.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\LCD.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\main.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\main.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\stopWatch.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\stopWatch.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Timer.c" -xcl_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.xcl" -macro_file "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.tmp" -icc_path "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Timer.c" -o "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "D$:\Downloads\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.tmp"
+  rspfile_name = D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.xcl.rsp
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\buzzer.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Calculator.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\DIO.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Keypad.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\LCD.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\main.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\stopWatch.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.pbi : INDEXER D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.xcl |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Timer.c
+  flags = "-out=D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.pbi" -f "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.xcl"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final.pbw : MAKEBROWSE D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final.pbd
+  flags = "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final.pbd" -output "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final.pbw"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part0.pbi : PDBLINK D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.pbi |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.pbi $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.pbi
+  flags = -M "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part0.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\buzzer.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Calculator.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\DIO.pbi"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part1.pbi : PDBLINK D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.pbi |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.pbi $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.pbi
+  flags = -M "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part1.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Keypad.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\LCD.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\main.pbi"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part2.pbi : PDBLINK D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.pbi |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.pbi
+  flags = -M "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part2.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\stopWatch.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Timer.pbi"
+
+build D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final.pbd : PDBLINK D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part0.pbi |  $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part1.pbi $
+D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part2.pbi
+  flags = -M "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final.pbd" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part0.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part1.pbi" "D$:\Faculty$ of$ engineering$ Ainshams$ university\4th$ year$ university\Embedded\Project\Final\Debug\BrowseInfo\Final_part2.pbi"
+
